@@ -1,0 +1,88 @@
+extends: default-with-fallback-font
+page:
+  margin: [1in, 0.37in, 0.67in, 0.67in]
+
+footer:
+  recto:
+    right:
+      content: '{section-or-chapter-title} | *{page-number}*'
+  verso:
+    left:
+      content: '*{page-number}* | {chapter-title}'
+
+header:
+  height: 0.5in
+  border_color: dddddd
+  border_width: 0.25
+  recto:
+    right:
+      content: image:logo.png[width=100]
+    center:
+      content: '{document-title}'
+  verso:
+    right:
+      content: $header-recto-right-content
+    center:
+      content: $header-recto-center-content
+
+font:
+  catalog:
+    merge: true
+    Noto Serif:
+      normal: GEM_FONTS_DIR/notoserif-regular-subset.ttf
+      bold: GEM_FONTS_DIR/notoserif-bold-subset.ttf
+      italic: GEM_FONTS_DIR/notoserif-italic-subset.ttf
+      bold_italic: GEM_FONTS_DIR/notoserif-bold_italic-subset.ttf
+    # M+ 1mn supports ASCII and the circled numbers used for conums
+    M+ 1mn:
+      normal: GEM_FONTS_DIR/mplus1mn-regular-subset.ttf
+      bold: GEM_FONTS_DIR/mplus1mn-bold-subset.ttf
+      italic: GEM_FONTS_DIR/mplus1mn-italic-subset.ttf
+      bold_italic: GEM_FONTS_DIR/mplus1mn-bold_italic-subset.ttf
+    OpenSans:
+      normal: opensans-normal.ttf
+      italic: opensans-italic.ttf
+      bold: opensans-bold.ttf
+      bold_italic: opensans-bold_italic.ttf
+    BooksellerCp:
+      normal: Bookseller-Cp-Regular.ttf
+      italic: Bookseller-Cp-Regular-Italic.ttf
+      bold: Bookseller-Cp-Regular-Bold.ttf
+      bold_italic: Bookseller-Cp-Regular-Bold-Italic.ttf
+    TitleFont:
+      normal: artemis.ttf
+      italic: artemis.ttf
+      bold: artemis.ttf
+      bold_italic: artemis.ttf
+    Heading:
+      normal: Alegra_Medium.ttf
+      italic: Alegra_MediumItalic.ttf
+      bold: Alegra_Medium.ttf
+      bold_italic: Alegra_MediumItalic.ttf
+
+  fallbacks:
+  - M+ 1p Fallback
+  - Noto Emoji
+base:
+  font-family: OpenSans
+heading:
+  font-family: BooksellerCp
+  font-color: [82, 73, 194]
+  h2:
+    font-family: Heading
+    font-size: 40
+codespan:
+  font_color: '#da3131'
+
+title-page:
+  #background:
+  #  image: image:hamilton.jpg[fit=cover, position=top]
+  title:
+    font-family: BooksellerCp
+    font-color: '#31317a'
+    font-size: 48
+    # top: 40%
+  subtitle:
+    font-family: TitleFont
+    font-color: '#da3131'
+    font-size: 24
